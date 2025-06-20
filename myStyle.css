@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+
+*{
+    margin: 0px;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    background-image: url(img/background\ pattern2.png);
+}
+
+#customCursor {
+    position: fixed;
+    width: 40px;
+    height: 56px;
+    pointer-events: none;
+    z-index: 1000;
+    transform: scaleY(-1);
+}
+
+header{
+    height: 100px;
+    background-color: rgba(27, 27, 27, 0.6);
+    position: sticky;
+    top: 0;
+    z-index: 10; 
+}
+
+#menu{
+    max-width: 1420px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+nav ul{
+    display: flex;
+    justify-content:flex-start;
+    
+}
+nav ul li{
+    list-style: none;
+    user-select: none;
+    position: relative;
+    display: inline-block; 
+    padding: 10px 80px 10px 10px;
+
+}
+
+nav ul li:hover{
+    background-image: url(img/menu_line.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+}   
+
+#logo{
+    padding: 30px 45px 30px 30px ;
+    user-select: none;
+    position: relative;
+    display: inline-block;
+}
+
+#logo:hover {
+    cursor: pointer;
+}
+
+#container{
+    max-width: 1420px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+#banner{
+    position: relative; 
+    max-width: 100%;
+    height: 910px;
+    display: block;
+    user-select: none;
+}
+
+.bannerLayer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    pointer-events: none; 
+}
+
+.bannerBottom {
+    z-index: 1;
+}
+
+.bannerMiddle {
+    z-index: 2;
+}
+
+.bannerTop {
+    z-index: 3;
+}
+
+.layerImg {
+    position: absolute;
+    transition: transform 0.2s ease-out;
+    pointer-events: auto;
+
+}
+
+#telephon01 {
+    position: absolute;
+    top: 68px;
+    left: 50%;
+    transform: translateX(-455px);
+    transition: transform 0.3s ease;
+    transform-origin: top;
+}
+
+#telephon02 {
+    position: absolute;
+    top: 550px;
+    left: 50%;
+    transform: translateX(500px) rotate(10deg);
+    transform-origin: top;
+}
+
+#who {
+    position: absolute;
+    top: 215px;
+    left: 50%;
+    transform: translateX(-710px);
+    transform-origin: left top;
+}
+
+#note{
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translateX(470px);
+    transform-origin: top;
+}
+
+#information{
+    display: flex;
+    width: 1420px;
+    height: auto;
+    margin: 6rem auto;
+    flex-direction: column;
+}
+
+#recentInfo{
+    display: flex;
+    width: 1420px;
+    height: auto;
+    margin: 9rem auto;
+    flex-direction: column;
+}
+
+#ratioInfo{
+    display: flex;
+    width: 1420px;
+    height: auto;
+    margin: auto;
+    flex-direction: column;
+}
+
+#prevention{
+    display: flex;
+    width: 1420px;
+    height: auto;
+    margin: auto;
+    flex-direction: column;
+}
+
+
+footer{
+    display: flex;
+    width: 1420px;
+    height: auto;
+    margin: 3rem auto;
+    justify-content: center;    
+}
+
+
+#slide{
+    display: flex;
+    width: 1420px;
+    height: auto;
+    margin: 15rem auto;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+#chartImg{
+    width: 800px;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+#chartImg2{
+    width: 800px;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+
+#imageContainer {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    padding-top: 10rem;
+    padding-bottom: 6rem;
+}
+
+#imageSlider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: -15px;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 360px;
+    height: 500px;
+    overflow: hidden; 
+    transform: translateX(-50%) scale(0.8);
+    opacity: 1;
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    pointer-events: none;
+    transition: transform 0.6s ease, z-index 0s; 
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide.center {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+    z-index: 3;
+    pointer-events: auto;
+    box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.8);
+}
+
+.slide.left {
+    transform: translateX(-120%) translateY(10px) scale(0.8) rotate(-10deg);
+    z-index: 2;
+}
+
+.slide.right {
+    transform: translateX(20%) translateY(10px) scale(0.8) rotate(10deg);
+    z-index: 2;
+}
+
+.slide::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;;
+    height: 100%;;
+    background: rgba(0,0,0,0);
+    transition: 0.4s ease;
+    z-index: 5;
+    
+}
+.slide.left::after,
+.slide.right::after {
+    background: rgba(0, 0, 0, 0.2); 
+}
+
+#interface {
+    position: absolute;
+    width: 100%;
+    top: 70%;
+    left: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none; 
+}
+
+#leftArrow {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    pointer-events: auto;
+    margin-left: -300px; 
+}
+
+ #rightArrow{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    pointer-events: auto;
+    margin-right: -300px; 
+ }
+
+
+ .slide-info {
+    margin-top: 10rem;
+    text-align: center;
+    position: relative;
+    left: -15px;  
+ }
+ 
+ .title-underline{
+    position: absolute;
+    left: 0;
+    bottom: -5rem;
+    left: -1rem;
+    width: 230px;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+ }
+
+.title_box{
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0rem;
+}
+
+#footer_box{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 6rem;
+}
+
+
+.title{
+    align-self: flex-start; 
+}
+
+.mainText{
+    margin: auto;
+    margin-top: 3rem;
+}
+
+.description{
+     text-align: center;
+     margin-top: 6rem;
+     border: 0;
+}
+
+#prevention ul {
+    margin-left: 6em;
+}
+
+hr{
+    margin-top: 6rem;
+    width: 100%;
+    background-color: #ff0000;
+    height: 1px;
+    border: 0px;
+}
+
+.highlight-box {
+    position: relative;
+    display: inline-block;
+}
+
+.circleImg {
+    position: absolute;
+    top: -9px;      
+    left: -5px;       
+    width: 110%;
+    height: auto;
+    pointer-events: none;
+    z-index: -1;
+    user-select: none;
+}
+
+.lineImg{
+    position: absolute;
+    top: 20px;      
+    left: 0px;       
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    z-index: -1;
+    user-select: none;
+}
+
+.list-box {
+    margin-top: -3rem;
+    position: relative;
+}
+.listImg{
+    position: absolute;
+    height: 80%; 
+    left: 480px;
+    top: 35px;
+    object-fit: contain; 
+    transform: scaleX(-1);
+    user-select: none;
+}
+
+.col1{width: 16.66%;padding: 1rem;}
+.col2{width: 33.33%;padding: 1rem;}
+.col3{width: 50%; padding: 1rem;}
+.col4{width: 66.66%; padding: 1rem;}
+.col5{width: 83.22%; padding: 1rem;}
+.col6{width: 100%; padding: 1rem;}
+.middle{text-align: center; width: 80%;}
+
+.menu-text{font-family: "Noto Sans KR", sans-serif; font-weight: 300; color: white; font-size:1.8rem; word-break: keep-all;}
+.logo-text{font-family: "Noto Sans KR", sans-serif; font-weight: 500; color: white; font-size:2.4rem; word-break: keep-all;}
+.title-text{font-family: "Noto Sans KR", sans-serif; font-weight: 500; color: white; font-size:2.8rem; word-break: keep-all;}
+.subTitle-text{font-family: "Noto Sans KR", sans-serif; font-weight: 400; color: white; font-size:2.4rem; word-break: keep-all;}
+.main-text{font-family: "Noto Sans KR", sans-serif; font-weight: 300; color: white; font-size:2.0rem; word-break: keep-all;}
+.des-text{font-family: "Noto Sans KR", sans-serif; font-weight: 200; color: white; font-size:1.8rem; word-break: keep-all;}
+.footer-text{font-family: "Noto Sans KR", sans-serif; font-weight: 200; color: white; font-size:1.4rem; word-break: keep-all;}
